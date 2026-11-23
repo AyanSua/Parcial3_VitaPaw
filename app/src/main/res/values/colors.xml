@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Custom VitaPaw Palette -->
+    <color name="color_pine">#0A3323</color>
+    <color name="color_teal">#105666</color>
+    <color name="color_sage">#839958</color>
+    <color name="color_rose">#D3968C</color>
+    <color name="color_cream">#F7F4D5</color>
+</resources>

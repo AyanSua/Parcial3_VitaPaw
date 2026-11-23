@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <!-- ENCABEZADO CON ÍCONO Y SUBTÍTULO -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                app:cardBackgroundColor="@color/color_cream"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/color_teal"
+                app:strokeWidth="1.2dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/ic_menu_add"
+                    app:tint="@color/color_teal" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Registrar Cuidado o Salud"
+                    android:textColor="@color/color_pine"
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Añade vacunas, consultas o tratamientos al historial"
+                    android:textColor="@color/color_teal"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- TARJETA 1: DETALLES DEL PROCEDIMIENTO -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/color_cream"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:strokeColor="@color/color_teal"
+            app:strokeWidth="1.2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:letterSpacing="0.06"
+                    android:text="DETALLES DEL PROCEDIMIENTO"
+                    android:textColor="@color/color_pine"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:drawablePadding="6dp"
+                    android:gravity="center_vertical"
+                    android:text="Categoría de atención"
+                    android:textColor="@color/color_teal"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:drawableStartCompat="@android:drawable/ic_menu_sort_by_size"
+                    app:drawableTint="@color/color_teal" />
+
+                <Spinner
+                    android:id="@+id/spTipoRegistro"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="14dp"
+                    android:background="@drawable/bg_badge_consulta"
+                    android:paddingHorizontal="14dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxStrokeColor="@color/color_teal"
+                    app:startIconDrawable="@android:drawable/ic_menu_edit"
+                    app:startIconTint="@color/color_teal">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDescripcionSalud"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Descripción o Nombre (Ej. Rabia, Drontal) *"
+                        android:inputType="textCapSentences"
+                        android:textColor="@color/color_pine" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxStrokeColor="@color/color_teal"
+                    app:startIconDrawable="@android:drawable/ic_menu_info_details"
+                    app:startIconTint="@color/color_teal">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etNotasSalud"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top"
+                        android:hint="Notas adicionales o dosis (Opcional)"
+                        android:inputType="textMultiLine|textCapSentences"
+                        android:lines="3"
+                        android:textColor="@color/color_pine" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- TARJETA 2: CRONOGRAMA Y RECORDATORIOS -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="22dp"
+            app:cardBackgroundColor="@color/color_cream"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:strokeColor="@color/color_sage"
+            app:strokeWidth="1.2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Barra lateral de acento -->
+                <View
+                    android:layout_width="6dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_sage" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:letterSpacing="0.06"
+                        android:text="CRONOGRAMA Y ALERTAS"
+                        android:textColor="@color/color_pine"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <!-- Fila de 2 columnas para las fechas -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="6dp"
+                            android:layout_weight="1"
+                            app:boxBackgroundColor="@color/white"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxStrokeColor="@color/color_teal"
+                            app:startIconDrawable="@android:drawable/ic_menu_day"
+                            app:startIconTint="@color/color_teal">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etFechaAplicacion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:focusable="false"
+                                android:hint="Aplicación *"
+                                android:inputType="date"
+                                android:textColor="@color/color_pine"
+                                android:textSize="13sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:layout_weight="1"
+                            app:boxBackgroundColor="@color/white"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxStrokeColor="@color/color_sage"
+                            app:startIconDrawable="@android:drawable/ic_menu_today"
+                            app:startIconTint="@color/color_sage">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etFechaProximo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:focusable="false"
+                                android:hint="Próxima cita"
+                                android:inputType="date"
+                                android:textColor="@color/color_pine"
+                                android:textSize="13sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:alpha="0.8"
+                        android:text="🔔 Si asignas una próxima cita, se programará un recordatorio en tu agenda."
+                        android:textColor="@color/color_pine"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- BOTÓN GUARDAR -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGuardarSalud"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/color_pine"
+            android:text="Guardar Registro"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="18dp"
+            app:elevation="5dp"
+            app:icon="@android:drawable/ic_menu_save"
+            app:iconGravity="textStart"
+            app:iconPadding="10dp"
+            app:iconTint="@color/white" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

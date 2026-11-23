@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <!-- AVATAR CON BOTÓN DE CÁMARA SUPERPUESTO -->
+        <FrameLayout
+            android:layout_width="136dp"
+            android:layout_height="136dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="6dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="124dp"
+                android:layout_height="124dp"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="@color/color_cream"
+                app:cardCornerRadius="62dp"
+                app:cardElevation="5dp"
+                app:strokeColor="@color/color_teal"
+                app:strokeWidth="2.5dp">
+
+                <ImageView
+                    android:id="@+id/ivFotoMascota"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_cream"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_paw" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Botón de cámara en la esquina (mismo ID para tu Java) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSeleccionarFoto"
+                style="@style/Widget.MaterialComponents.Button.Icon"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
+                android:backgroundTint="@color/color_teal"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:padding="0dp"
+                app:cornerRadius="21dp"
+                app:elevation="6dp"
+                app:icon="@android:drawable/ic_menu_camera"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="20dp"
+                app:iconTint="@color/white" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:text="Toca la cámara para subir una foto"
+            android:textColor="@color/color_teal"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <!-- TARJETA 1: DATOS GENERALES -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            app:cardBackgroundColor="@color/color_cream"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:strokeColor="@color/color_sage"
+            app:strokeWidth="1.2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_paw"
+                        app:tint="@color/color_teal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:letterSpacing="0.05"
+                        android:text="INFORMACIÓN PRINCIPAL"
+                        android:textColor="@color/color_pine"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Nombre -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxStrokeColor="@color/color_teal"
+                    app:startIconDrawable="@android:drawable/ic_menu_edit"
+                    app:startIconTint="@color/color_teal">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etNombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nombre de la mascota *"
+                        android:inputType="textCapWords"
+                        android:textColor="@color/color_pine" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Especie -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxStrokeColor="@color/color_teal"
+                    app:startIconDrawable="@android:drawable/ic_menu_view"
+                    app:startIconTint="@color/color_teal">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEspecie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Especie (Perro, Gato, etc.) *"
+                        android:inputType="textCapWords"
+                        android:textColor="@color/color_pine" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Raza -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxStrokeColor="@color/color_teal"
+                    app:startIconDrawable="@android:drawable/ic_menu_info_details"
+                    app:startIconTint="@color/color_teal">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRaza"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Raza (Opcional)"
+                        android:inputType="textCapWords"
+                        android:textColor="@color/color_pine" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Fila de 2 columnas: Fecha y Peso -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1.25"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="@color/color_teal"
+                        app:startIconDrawable="@android:drawable/ic_menu_day"
+                        app:startIconTint="@color/color_teal">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etFechaNac"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="false"
+                            android:hint="Nacimiento"
+                            android:textColor="@color/color_pine"
+                            android:textSize="13sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="@color/color_teal"
+                        app:suffixText="kg"
+                        app:suffixTextColor="@color/color_pine">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPeso"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Peso"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/color_pine"
+                            android:textSize="13sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- TARJETA 2: FICHA MÉDICA CON ACENTO LATERAL -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="22dp"
+            app:cardBackgroundColor="@color/color_cream"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:strokeColor="@color/color_rose"
+            app:strokeWidth="1.2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Barra lateral de alerta -->
+                <View
+                    android:layout_width="6dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_rose" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="14dp"
+                        android:letterSpacing="0.05"
+                        android:text="FICHA MÉDICA DE EMERGENCIA"
+                        android:textColor="@color/color_rose"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <!-- Alergias -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="@color/color_rose"
+                        app:startIconDrawable="@android:drawable/ic_dialog_alert"
+                        app:startIconTint="@color/color_rose">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etAlergias"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Alergias o condiciones médicas"
+                            android:textColor="@color/color_pine" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Microchip -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="@color/color_teal"
+                        app:startIconDrawable="@android:drawable/ic_menu_agenda"
+                        app:startIconTint="@color/color_teal">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etMicrochip"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Número de Microchip (Opcional)"
+                            android:textColor="@color/color_pine" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Contenedor para CheckBox -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/color_sage"
+                        app:strokeWidth="1dp">
+
+                        <CheckBox
+                            android:id="@+id/cbEsterilizado"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/color_teal"
+                            android:paddingHorizontal="8dp"
+                            android:text="Mascota esterilizada / castrada"
+                            android:textColor="@color/color_pine"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- BOTÓN GUARDAR -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGuardarMascota"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/color_pine"
+            android:text="Guardar Mascota"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="18dp"
+            app:elevation="5dp"
+            app:icon="@android:drawable/ic_menu_save"
+            app:iconGravity="textStart"
+            app:iconPadding="10dp"
+            app:iconTint="@color/white" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

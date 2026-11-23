@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- TARJETA DE PERFIL DE LA MASCOTA -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            app:cardBackgroundColor="@color/color_cream"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="5dp"
+            app:strokeColor="@color/color_teal"
+            app:strokeWidth="1.2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <!-- Fila Superior: Foto + Datos + Alerta -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
+                        app:cardCornerRadius="42dp"
+                        app:cardElevation="3dp"
+                        app:strokeColor="@color/color_teal"
+                        app:strokeWidth="2dp">
+
+                        <ImageView
+                            android:id="@+id/ivDetalleFoto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#E2E8F0"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_paw" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvDetalleNombre"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Nombre"
+                            android:textColor="@color/color_pine"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvDetalleInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Especie • Raza"
+                            android:textColor="@color/color_teal"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <!-- Cápsula de Alerta Médica -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/color_rose"
+                            app:strokeWidth="1dp">
+
+                            <TextView
+                                android:id="@+id/tvAlertaEmergencia"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingHorizontal="10dp"
+                                android:paddingVertical="4dp"
+                                android:text="Alertas"
+                                android:textColor="@color/color_rose"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="14dp"
+                    app:dividerColor="@color/color_sage" />
+
+                <!-- ACCIONES DEL PERFIL EN CUADRÍCULA 2x2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnEditarMascota"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/color_teal"
+                            android:text="Editar Perfil"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="14dp"
+                            app:elevation="2dp"
+                            app:icon="@android:drawable/ic_menu_edit"
+                            app:iconSize="16dp"
+                            app:iconTint="@color/white" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnRegistrarPeso"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/color_sage"
+                            android:text="⚖️ Control Peso"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="14dp"
+                            app:elevation="2dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnExportarPdf"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/color_pine"
+                            android:text="📄 Ficha PDF"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="14dp"
+                            app:elevation="2dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnEliminarMascota"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="@color/color_rose"
+                            android:text="Eliminar"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="14dp"
+                            app:elevation="2dp"
+                            app:icon="@android:drawable/ic_menu_delete"
+                            app:iconSize="16dp"
+                            app:iconTint="@color/white" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- CHECKLIST DE BIENESTAR MENSUAL -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            app:cardBackgroundColor="@color/color_cream"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="3dp"
+            app:strokeColor="@color/color_sage"
+            app:strokeWidth="1.2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="✨ Rutina de Bienestar del Mes"
+                        android:textColor="@color/color_pine"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvProgresoBienestar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/4"
+                        android:textColor="@color/color_teal"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/pbBienestar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_marginVertical="8dp"
+                    android:max="4"
+                    android:progress="0"
+                    android:progressTint="@color/color_teal" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/cbBano"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/color_teal"
+                        android:text="Baño"
+                        android:textColor="@color/color_pine"
+                        android:textSize="11sp" />
+
+                    <CheckBox
+                        android:id="@+id/cbUnas"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/color_teal"
+                        android:text="Uñas"
+                        android:textColor="@color/color_pine"
+                        android:textSize="11sp" />
+
+                    <CheckBox
+                        android:id="@+id/cbOidos"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/color_teal"
+                        android:text="Oídos"
+                        android:textColor="@color/color_pine"
+                        android:textSize="11sp" />
+
+                    <CheckBox
+                        android:id="@+id/cbPipeta"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/color_teal"
+                        android:text="Pipeta"
+                        android:textColor="@color/color_pine"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- BOTÓN PRINCIPAL DE ACCIÓN MÉDICA -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNuevoRegistroSalud"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/color_pine"
+            android:text="Nuevo Registro Médico"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:cornerRadius="16dp"
+            app:elevation="4dp"
+            app:icon="@android:drawable/ic_input_add"
+            app:iconGravity="textStart"
+            app:iconTint="@color/white" />
+
+        <!-- ENCABEZADO HISTORIAL CLÍNICO -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:letterSpacing="0.06"
+                android:text="HISTORIAL CLÍNICO"
+                android:textColor="@color/color_pine"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@android:drawable/ic_menu_recent_history"
+                app:tint="@color/color_teal" />
+        </LinearLayout>
+
+        <!-- BUSCADOR Y FILTRO ESTILIZADOS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etBuscarHistorial"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1.35"
+                android:background="@drawable/bg_badge_consulta"
+                android:drawableStart="@android:drawable/ic_menu_search"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/color_teal"
+                android:hint="Buscar vacuna o nota..."
+                android:paddingHorizontal="14dp"
+                android:textColor="@color/color_pine"
+                android:textSize="13sp" />
+
+            <Spinner
+                android:id="@+id/spFiltroTipo"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="0.95"
+                android:background="@drawable/bg_badge_consulta"
+                android:paddingHorizontal="10dp" />
+        </LinearLayout>
+
+        <!-- LISTA DE REGISTROS -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvHistorialSalud"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

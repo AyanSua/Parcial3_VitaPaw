@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Parcial3_VitaPaw" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/color_pine</item>
+        <item name="colorSecondary">@color/color_teal</item>
+        <item name="colorTertiary">@color/color_sage</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="colorSurface">@color/color_cream</item>
+    </style>
+
+    <style name="Theme.Parcial3_VitaPaw" parent="Base.Theme.Parcial3_VitaPaw" />
+</resources>
